@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 =======
 # nsop2025
 
->>>>>>> d57e68d (first commit, updated readme)
+=======
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
