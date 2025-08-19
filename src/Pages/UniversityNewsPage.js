@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SampleComponent from '../Components/SampleComponent';
+import WelcomeBox from '../Components/WelcomeBox';
 
 const StyledText = styled.div` 
     font-size: 20px;
@@ -13,12 +14,9 @@ const StyledText = styled.div`
 
 const UniversityNewsPage = () => {
     return (
-        <>
-            <StyledText>
-            Start Working here
-            </StyledText>
-         <SampleComponent/>
-         </>
+        <div>
+            <WelcomeBox/>
+        </div>
         );
     };
 
