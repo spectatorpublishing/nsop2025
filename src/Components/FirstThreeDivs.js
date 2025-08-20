@@ -82,11 +82,47 @@ const LetterCard = styled.div`
     font-family: 'Righteous';
     font-size: 19.529px;
     font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    font-weight: 200;
+    line-height: 32px;
 `;
 
-const WelcomePage = () => {
+const Signatures = styled.div`
+  display: flex;
+  width: 359.541px;
+  height: 100.788px;
+  transform: rotate(0.142deg);
+  align-items: center;
+  gap: 60.726px;
+  flex-shrink: 0;
+  border-radius: 1.481px;
+  margin-left: 10px;
+`;
+
+/* Each signature block */
+const Signature = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.05;
+`;
+
+/* Name (script-style) */
+const SigName = styled.div`
+  font-family: "Oooh Baby";
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 6px;
+  font-style: italic;
+`;
+
+/* Title (bold sans) */
+const SigTitle = styled.div`
+  font-family: 'Righteous';
+  font-size: 19.529px;
+  font-weight: 800;
+`;
+
+const firstThreeDivs = () => {
   return (
     <Page>
       <Container>
@@ -99,29 +135,44 @@ const WelcomePage = () => {
 
         <LetterCard>
             <h1>Dear class of 2029 [Not actual text],</h1>
-            <p>
+            <div>
                 Welcome to Columbia! As you immerse yourself in the University community and settle into your new home, you will encounter a campus facing a pivotal moment in its history as you, too, undergo significant change. You probably have lots of lingering questions about what the years ahead will look like and how to navigate all of Columbia’s different facets. Inside this special issue, you will find everything we at Spectator think first-year students should know as you acquaint yourself with campus life.
-            </p>
-
-            <p>ABOUT SPECTATOR</p>
-            <p>
+            </div>
+            <br></br>
+            <div>ABOUT SPECTATOR</div>
+            <div>
                 Spectator is a financially independent nonprofit organization and the largest student-run news media group on campus, serving tens of thousands of readers across Columbia, Morningside Heights, and West Harlem. We have a 148-year tradition of documenting history as it unfolds through in-depth, well-reported stories that hold institutional power to account.
-            </p>
-            <p>
+            </div>
+            <br></br>
+            <div>
                 Central to our mission is helping our audience make the most of their experience at Columbia and its surrounding communities through our award-winning journalism. With Spectator’s publications and products, we aim to identify and directly address the needs of students, faculty, staff, and residents. Across all of our departments—which consist of hundreds of reporters, multimedia journalists, designers, analysts, salespeople, engineers, and more—we work to keep you informed and continuously improve your college experience within and beyond the campus gates.
-            </p>
-
-            <p>JOINING SPECTATOR AND WORK STUDY</p>
-            <p>
+            </div>
+            <br></br>
+            <div>JOINING SPECTATOR AND WORK STUDY</div>
+            <div>
                 Joining Spec is one of the best ways to kick off your four years at Columbia. When you become a member of the Spec family, nestled in our office in Riverside Church, you step into a community of sharp and passionate students who care deeply about the work they do. You’ll build lifelong connections and friendships and learn skills that will define your Columbia experience.
-            </p>
-            <p>
+            </div>
+            <br></br>
+            <div>
                 Working at Spec is an unmatched opportunity to be part of a fully independent organization and make a tangible difference in a community of which you are now a member. We shape curious and eager staff members across journalism, business, and tech into the best versions of themselves as they grow as leaders, thinkers, and people ready to enter any career path they choose to pursue.
-            </p>
+            </div>
+            <br></br>
+            <br></br>
+            <Signatures>
+              <Signature>
+                <SigName>First Last</SigName>
+                <SigTitle>Editor in Chief</SigTitle>
+              </Signature>
+
+              <Signature>
+                <SigName>First Last</SigName>
+                <SigTitle>Managing Editor</SigTitle>
+              </Signature>
+            </Signatures>
         </LetterCard>
       </Container>
     </Page>
   );
 };
 
-export default WelcomePage;
+export default firstThreeDivs;
