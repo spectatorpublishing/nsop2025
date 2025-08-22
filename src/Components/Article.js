@@ -4,43 +4,58 @@ import styled from "styled-components";
 const ArticleLinkContainer = styled.a`
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 25rem;
   display: block; 
-  text-decoration: none; /
+  text-decoration: none;
   color: inherit; 
+  top: -2rem;
   
   @media (max-width: 768px) {
-    width: 80%;
-    margin: 0 auto;
+    width: 18rem;
+    margin: 15rem auto -15rem auto;
+    padding-bottom: 2rem;
+    
   }
 `;
 
 const ArticleImage = styled.img`
   object-fit: cover;
   display: block;
-  width: 70%;
+  width: 69%;
   height: auto;
+  aspect-ratio: 1/1;
+
+  @media (max-width: 768px) {
+    width: 60%;
+  }
 `;
 
 const ArticleVideo = styled.iframe`
-  object-fit: cover;
   display: block;
   width: 70%;
   height: auto;
+  aspect-ratio: 16/9;
+  border: none;
 `;
 
 const Card = styled.div`
-  width: 334.664px;
-  height: 404.171px;
+  width: 100%;
+  max-width: 21rem;
+  height: 25.5rem;
   flex-shrink: 0;
   background-color: #56DDE1;
-  outline: 4px solid #000;
+  outline: 0.25rem solid #000;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 30px;
+  padding-top: 2rem;
+
+  @media (max-width: 768px) {
+    height: 20rem;
+    padding-top: 1.5rem;
+  }
 `;
 
 const CardText = styled.h1`
@@ -48,30 +63,48 @@ const CardText = styled.h1`
   margin: 0 auto; 
   color: #121212;
   font-family: Righteous;
-  font-size: 14.588px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
-  width: 270px;
-  margin-top: 39px;       
+  width: 85%;
+  max-width: 18rem;
+  margin-top: 1.9rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    margin-top: 1.2rem;
+  }
 `;
 
 const Author = styled.div`
-  width: 334.664px;;
-  height: 57.494px;
-  margin-top: 30px;
+  width: 100%;
+  height: 3.6rem;
+  margin-top: 2.7rem;
   flex-shrink: 0;
   background-color: #FFF;
-  outline: 2px solid #000;
+  outline: 0.125rem solid #000;
+
+  @media (max-width: 768px) {
+    height: 3.2rem;
+    margin-top: 2.4rem;
+  }
 `;
 
 const AuthorText = styled.h1`
-  font-size: 16px;
+  font-size: 1rem;
   color: #000;
   font-weight: 400;
   font-family: Righteous;
   text-align: center;
   line-height: 200%;
+  margin: 0;
+  padding: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
 `;
 
 /* ---------- Helper Functions ---------- */

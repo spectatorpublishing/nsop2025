@@ -4,20 +4,38 @@ import Article from "../Components/Article";
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 350px);
-  column-gap: 15px;  
-  row-gap: 30px;  
-  justify-content: end; 
-  margin-top: -250px;
-  margin-right: 75px;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  column-gap: 1rem;  
+  row-gap: 2rem;  
+  justify-content: center; 
+  margin-top: -15.5rem;
+  margin-left: 15.7rem;
+  padding: 0 2rem;
+
+
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr; 
+    row-gap: 0.5rem; 
+    column-gap: 0;            
+    margin: 0 auto; 
+    padding: 0.5rem;
+    max-width: 22rem;           
+  }
 `;
 
 const NoArticles = styled.div`
   font-family: Righteous, sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #121212;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 3rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
 `;
 
 const ArticlePage = ({ articles = [] }) => {

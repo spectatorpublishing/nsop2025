@@ -8,9 +8,13 @@ import ArticlePage from './ArticlePage';
 import universityArticles from "../data/universityArticles";
 
 const PageWrapper = styled.div`
-  min-height: 150vh;
+  min-height: 160vh;
   background-color: #3EB8E7;
-  margin-top: 40px;
+  margin-top: 2.5rem;
+
+@media (max-width: 768px) {
+  background-color: #0D9DD4;          
+}
 `;
 
 const UniversityNewsPage = () => {
