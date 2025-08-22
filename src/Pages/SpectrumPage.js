@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import IntroPage from './IntroPage';
-import NavBar from '../Components/NavBar';
-import SectionTitle from '../Components/SectionTitle';
+import NavBar from '../Components/NavBar'
+import SectionTitle from '../Components/SectionTitle'
 import ArticlePage from './ArticlePage';
 
-import universityArticles from "../data/universityArticles";
+import spectrumArticles from "../data/spectrumArticles";
 
 const PageWrapper = styled.div`
   min-height: 150vh;
@@ -13,18 +13,18 @@ const PageWrapper = styled.div`
   margin-top: 40px;
 `;
 
-const UniversityNewsPage = () => {
+const SpectrumPage = () => {
     return (
         <div>
             <IntroPage></IntroPage>
-            <SectionTitle title="UNIVERSITY" />
+            <SectionTitle title="SPECTRUM" />
             <PageWrapper>
                 <NavBar></NavBar>
-                <ArticlePage articles={universityArticles} />
+                <ArticlePage articles={spectrumArticles} />
             </PageWrapper>  
         </div>
           
         );
     };
 
-export default UniversityNewsPage;
+export default SpectrumPage;
