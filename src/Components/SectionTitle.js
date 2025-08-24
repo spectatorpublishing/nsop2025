@@ -2,8 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 75.5vw;
-  max-width: 70rem;
+  
   height: 8rem;
   position: relative;
   border: 0.6rem solid #000;
@@ -11,6 +10,8 @@ const Container = styled.div`
   background-image: url(${'noise_texture.png'});
   margin-left: 17.5rem;
   bottom: -17.1rem;
+  max-width: 90%;
+  margin-right: 5rem;
 
   @media (max-width: 768px) {
     width: 90vw;
