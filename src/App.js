@@ -1,5 +1,10 @@
 import './App.css';
 import UniversityNewsPage from './Pages/UniversityNewsPage';
+import SportsPage from './Pages/SportsPage';
+import ACPage from './Pages/ACPage';
+import SpectrumPage from './Pages/SpectrumPage';
+import CrosswordsPage from './Pages/CrosswordsPage';
+import VideoPage from './Pages/VideoPage';
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -8,6 +13,11 @@ function App() {
     <div>
         <Routes>
           <Route path="/" element={<UniversityNewsPage />} />
+          <Route path="/sports" element={<SportsPage />} />
+          <Route path="/ac" element={<ACPage />} />
+          <Route path="/spectrum" element={<SpectrumPage />} />
+          <Route path="/crosswords" element={<CrosswordsPage />} />
+          <Route path="/video" element={<VideoPage />} />
         </Routes>
     </div>
   );
