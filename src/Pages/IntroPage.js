@@ -5,7 +5,6 @@ const IntroPage = () => {
   return (
     <div>
         <FirstThreeDivs/>
-        {/* ADD ADS HERE */}
     </div>
     
   );
