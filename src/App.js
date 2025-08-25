@@ -7,6 +7,8 @@ import SpectrumPage from './Pages/SpectrumPage';
 import CrosswordsPage from './Pages/CrosswordsPage';
 import VideoPage from './Pages/VideoPage';
 import { Routes, Route } from 'react-router-dom';
+import OpinionPage from './Pages/OpinionPage';
+import AudioPage from './Pages/AudioPage';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
           <Route path="/spectrum" element={<SpectrumPage />} />
           <Route path="/crosswords" element={<CrosswordsPage />} />
           <Route path="/video" element={<VideoPage />} />
+          <Route path ="/opinion" element={<OpinionPage />} />
+          <Route path ="/audio" element={<AudioPage />} />
         </Routes>
     </div>
   );

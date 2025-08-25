@@ -23,6 +23,12 @@ const universityArticles = [
     title: "Who’s who? Here are the key Columbia and Barnard administrators to know in 2025",
     authors: ["Joseph Zuloaga"],
   },
+  {
+    article_link: "https://www.columbiaspectator.com/news/2025/08/22/heres-how-columbias-deal-with-the-trump-administration-may-play-out/",
+    image: "https://www.columbiaspectator.com/resizer/v2/7MTG7KDCRZBHPHQ7J67D7XIQFI.png?auth=8d47f97d988e8909cf2fc0f25dd53696969da2bcf1bc344d75ef309485633853",
+    title: "Here’s how Columbia’s deal with the Trump administration may play out",
+    authors: ["Emily Pickering", "Spencer Davis"],
+  }
 ];
 
 export default universityArticles;

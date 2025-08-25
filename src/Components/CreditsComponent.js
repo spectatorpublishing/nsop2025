@@ -163,9 +163,6 @@ const CreditsComponent = () => {
       <BurstWrapper className="bottom-left">
         <Firework fillColor="#F0FFA3" strokeColor="#111" size="small-firework" />
       </BurstWrapper>
-      <BurstWrapper className="bottom-right">
-        <Firework fillColor="#F0FFA3" strokeColor="#111" size="large-firework" />
-      </BurstWrapper>
       <HeaderDiv>
         <Header>Staff Who Made This Issue Possible</Header>
       </HeaderDiv>
