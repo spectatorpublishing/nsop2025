@@ -21,7 +21,7 @@ const ArticleLinkContainer = styled.a`
 const ArticleImage = styled.img`
   object-fit: cover;
   display: block;
-  width: 69%;
+  width: 65%;
   height: auto;
   aspect-ratio: 1/1;
 
@@ -80,14 +80,14 @@ const CardText = styled.h1`
 const Author = styled.div`
   width: 100%;
   height: 3.6rem;
-  margin-top: 2.7rem;
+  margin-top: auto;
   flex-shrink: 0;
   background-color: #FFF;
   outline: 0.125rem solid #000;
 
   @media (max-width: 768px) {
     height: 3.2rem;
-    margin-top: 2.4rem;
+    margin-top: auto;
   }
 `;
 
@@ -97,7 +97,7 @@ const AuthorText = styled.h1`
   font-weight: 400;
   font-family: Righteous;
   text-align: center;
-  line-height: 200%;
+  line-height: 150%;
   margin: 0;
   padding: 0.5rem;
 

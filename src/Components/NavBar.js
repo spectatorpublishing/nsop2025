@@ -31,7 +31,7 @@ const Sidebar = styled.div`
 
 const Section = styled.div`
   width: 100%;
-  height: 16.67%;
+  height: 14.29%;
   flex-shrink: 0;
   background-color: #FFF;
   outline: 0.5rem solid #000;
@@ -117,6 +117,9 @@ const NavBar = () => {
         </Section>
         <Section>
             <NavItem to="/video">Video</NavItem>
+        </Section>
+        <Section>
+            <NavItem to="/city">City</NavItem>
         </Section>
     </Sidebar>
   );
