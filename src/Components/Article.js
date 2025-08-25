@@ -32,8 +32,7 @@ const ArticleImage = styled.img`
 
 const ArticleVideo = styled.iframe`
   display: block;
-  width: 70%;
-  height: auto;
+  width: 100%;
   aspect-ratio: 16/9;
   border: none;
 `;
@@ -116,17 +115,22 @@ const AuthorText = styled.h1`
 
 /* ---------- Helper Functions ---------- */
 function isYouTubeUrl(url) {
-  return url.includes("youtube.com") || url.includes("youtu.be");
+  console.log("Checking if URL is YouTube:", url);
+  return url.includes("youtube.com") || url.includes("youtube");
 }
 
 function getEmbedUrl(url) {
-  if (url.includes("youtu.be")) {
+  if (url.includes("youtu.be/")) {
     // e.g. "https://youtu.be/VIDEO_ID" => "https://www.youtube.com/embed/VIDEO_ID"
     return url.replace("youtu.be/", "youtube.com/embed/");
   }
-  // e.g. "https://www.youtube.com/watch?v=VIDEO_ID" => "https://www.youtube.com/embed/VIDEO_ID"
-  return url.replace("watch?v=", "embed/");
+  if (url.includes("youtube.com/watch?v=")) {
+    // e.g. "https://www.youtube.com/watch?v=VIDEO_ID" => "https://www.youtube.com/embed/VIDEO_ID"
+    return url.replace("watch?v=", "embed/");
+  }
+  return url; // Return original if not a YouTube URL
 }
+
 
 const Article = ({ article_link, image, title, authors }) => {
   const youtubeLink = isYouTubeUrl(image);
