@@ -17,6 +17,14 @@ const Container = styled.div`
   column-gap: clamp(12px, 2vw, 28px);
   row-gap: 24px;
   align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding-left: 20px;
+    padding-right: 20px;
+    row-gap: 20px;
+    margin-top: 24px;
+  }
 `;
 
 const LogoEllipse = styled.div`
@@ -31,6 +39,13 @@ const LogoEllipse = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+    top: -15%;
+    right: -6%;
+  }
 `;
 
 const EllipseCover = styled.img`
@@ -54,6 +69,12 @@ const CrownWrapper = styled.a`
   text-decoration: none;
   display: block;
   z-index: 7;
+
+  @media (max-width: 768px) {
+    width: 40%;
+    bottom: -4%;
+    left: -6%;
+  }
 `;
 
 const WhiteCrown = styled.img`
@@ -80,9 +101,17 @@ const NSOPimage = styled.img`
   grid-row: 1 / span 2;
   width: 95%;
   height: auto;
-  border: 6.729px solid #000;
+  border: 5.729px solid #000;
   display: block;
   max-width: 100%;
+
+  @media (max-width: 768px) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 70%;
+    border-width: 4px;
+    justify-self: center;
+  }
 `;
 
 const BlueBox = styled.div`
@@ -93,9 +122,18 @@ const BlueBox = styled.div`
   width: 100%;
   height: 307.578px;
   background-color: #56DDE1;
-  border: 6.729px solid #000;
+  border: 5.729px solid #000;
   overflow: visible;
   justify-self: end;
+
+  @media (max-width: 768px) {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 90%;
+    height: clamp(150px, 36vw, 200px);
+    border-width: 4px;
+    justify-self: center;
+  }
 `;
 
 const NYCbg = styled.img`
@@ -114,13 +152,15 @@ const WelcomeText = styled.img`
   left: 50%;
   top: 55%;
   transform: translate(-50%, -50%);
-  /* Responsive width that grows/shrinks with the viewport,
-    but never smaller than 260px or larger than 720px */
   width: clamp(260px, 52vw, 720px);
-  max-width: 100%;   /* still respects the BlueBox boundary */
+  max-width: 100%;
   height: auto;
   z-index: 2;
   pointer-events: none;
+
+  @media (max-width: 768px) {
+    width: clamp(180px, 70vw, 360px);
+  }
 `;
 
 const LetterCard = styled.div`
@@ -128,15 +168,22 @@ const LetterCard = styled.div`
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   background: #f7f7f7;
-  border: 6.729px solid #000;
+  border: 5.729px solid #000;
   padding: 55px 36px;
-
   color: #2C2C2C;
   font-family: 'Righteous';
   font-size: 19.529px;
   font-style: normal;
   font-weight: 200;
   line-height: 32px;
+
+  @media (max-width: 768px) {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding: 25px 18px;
+    font-size: 15px;
+    line-height: 24px;
+  }
 `;
 
 const Signatures = styled.div`
@@ -149,6 +196,12 @@ const Signatures = styled.div`
   flex-shrink: 0;
   border-radius: 1.481px;
   margin-left: 10px;
+
+  @media (max-width: 768px) {
+    width: 220px;
+    height: 70px;
+    gap: 20px;
+  }
 `;
 
 const Signature = styled.div`
@@ -164,31 +217,43 @@ const SigName = styled.div`
   font-weight: 400;
   margin-bottom: 6px;
   font-style: italic;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const SigTitle = styled.div`
   font-family: 'Righteous';
   font-size: 19.529px;
   font-weight: 800;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const firstThreeDivs = () => {
   return (
     <Page>
       <Container>
-        <NSOPimage src="nsop.png" alt="NSOP sketch" />
-
         <BlueBox>
-        <LogoEllipse>
-          <EllipseCover src="/ellipseCover.svg" alt="ellipse cover" />
-          <CrownWrapper href="https://www.columbiaspectator.com/" target="_blank" rel="noopener noreferrer">
-            <WhiteCrown src="/whiteCrown.png" alt="white crown logo" />
-            <BlackCrown src="/blackCrown.png" alt="black crown logo" />
-          </CrownWrapper>
-        </LogoEllipse>
+          <LogoEllipse>
+            <EllipseCover src="/ellipseCover.svg" alt="ellipse cover" />
+            <CrownWrapper
+              href="https://www.columbiaspectator.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <WhiteCrown src="/whiteCrown.png" alt="white crown logo" />
+              <BlackCrown src="/blackCrown.png" alt="black crown logo" />
+            </CrownWrapper>
+          </LogoEllipse>
           <NYCbg src="NYCbg.png" alt="NYC skyline" />
           <WelcomeText src="welcomeToColumbia.png" alt="Welcome to Columbia" />
         </BlueBox>
+
+        <NSOPimage src="nsop.png" alt="NSOP sketch" />
 
         <LetterCard>
           <h1>Dear class of 2029 [Not actual text],</h1>
