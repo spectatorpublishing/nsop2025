@@ -63,7 +63,17 @@ const NavItem = styled(NavLink)`
   line-height: normal;
   text-decoration: none;
 
-  /* hover effect */
+  /* Hover effect for the text only */
+  span {
+    display: inline-block;
+    transition: transform 0.3s ease; /* Smooth rotation effect */
+  }
+
+  &:hover span {
+    transform: rotate(5deg); /* Rotate text slightly on hover */
+  }
+
+  /* hover effect for the background */
   &:hover {
     background-image: url(${'noise_texture.png'});
     background-color: #F167A5; /* pink when active */
@@ -101,25 +111,25 @@ const NavBar = () => {
   return (
     <Sidebar>
         <Section>
-            <NavItem to="/">University</NavItem>
+            <NavItem to="/"><span>University</span></NavItem>
         </Section>
         <Section>
-            <NavItem to="/sports">Sports</NavItem>
+            <NavItem to="/sports"><span>Sports</span></NavItem>
         </Section>
         <Section>
-            <NavItem to="/ac">A & C</NavItem>
+            <NavItem to="/ac"><span>A & C</span></NavItem>
         </Section>
         <Section>
-            <NavItem to="/spectrum">Spectrum</NavItem>
+            <NavItem to="/spectrum"><span>Spectrum</span></NavItem>
         </Section>
         <Section>
-            <NavItem to="/crosswords">Crosswords</NavItem>
+            <NavItem to="/crosswords"><span>Crosswords</span></NavItem>
         </Section>
         <Section>
-            <NavItem to="/video">Video</NavItem>
+            <NavItem to="/video"><span>Video</span></NavItem>
         </Section>
         <Section>
-            <NavItem to="/city">City</NavItem>
+            <NavItem to="/city"><span>City</span></NavItem>
         </Section>
     </Sidebar>
   );

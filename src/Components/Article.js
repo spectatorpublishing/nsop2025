@@ -45,12 +45,19 @@ const Card = styled.div`
   flex-shrink: 0;
   background-color: #56DDE1;
   outline: 0.25rem solid #000;
+  border: 0.125rem solid #000;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   padding-top: 2rem;
+
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+
+  &:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+  }
 
   @media (max-width: 768px) {
     height: 20rem;
@@ -136,7 +143,6 @@ const Article = ({ article_link, image, title, authors }) => {
         {youtubeLink ? (
           <ArticleVideo
             src={embedUrl}
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             title={title}

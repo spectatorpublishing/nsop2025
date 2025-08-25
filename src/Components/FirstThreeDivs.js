@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import BlueBarMobile from "./BlueBarMobile";
+import BlueBarMobile from "../Components/BlueBarMobile";
 
 const CrownIcon = styled.img`
   position: absolute;
@@ -37,21 +37,34 @@ const Container = styled.div`
   }
 `;
 
-const NSOPimage = styled.img`
-  box-sizing: border-box;
+const StickyImageWrapper = styled.div`
   grid-column: 1 / 2;
   grid-row: 1 / span 2;
+  position: sticky;
+  top: 20px;
+  align-self: start;
+  height: fit-content;
+  
+  @media (max-width: 768px) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    position: static;
+  }
+`;
+
+const NSOPimage = styled.img`
+  box-sizing: border-box;
   width: 95%;
   height: auto;
   border: 5.729px solid #000;
   display: block;
   max-width: 100%;
+  
   @media (max-width: 768px) {
-    grid-column: 1 / -1;
-    grid-row: 2;
     width: 70%;
     border-width: 4px;
-    justify-self: center;
+    margin: 0 auto;
+    display: block;
   }
 `;
 
@@ -205,7 +218,9 @@ const FirstThreeDivs = () => {
           <WelcomeText src="welcomeToColumbia.png" alt="Welcome to Columbia" />
         </BlueBox>
 
-        <NSOPimage src="nsop.png" alt="NSOP sketch" />
+        <StickyImageWrapper>
+          <NSOPimage src="https://cloudfront-us-east-1.images.arcpublishing.com/spectator/QLUCFG5NXJCH3DIQG2O6U3WHTE/resizer/v2/QLUCFG5NXJCH3DIQG2O6U3WHTE.png?auth=8cd6f462718de7cef73c416dedec61e2844d0d81f72060e6de033d40caca1096" alt="NSOP sketch" />
+        </StickyImageWrapper>
 
         <LetterCard>
         <h1>Dear class of 2029,</h1>

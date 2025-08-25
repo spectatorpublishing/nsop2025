@@ -20,7 +20,7 @@ const StyledSVG = styled.svg`
 `;
 
 const Firework = ({
-  size = "large-firework", // Default to "large-firework"
+  size = "large-firework",
   fillColor = "#F0FFA3",
   strokeColor = "#000",
   ...props

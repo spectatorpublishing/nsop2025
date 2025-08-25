@@ -8,7 +8,7 @@ const sportsArticles = [
   {
     article_link: "https://www.columbiaspectator.com/sports/2025/08/20/columbias-student-athletes-stayed-busy-over-the-summer-with-tournaments-and-professional-play-heres-how-the-lions-fared-in-the-offseason/",
     image: "https://www.columbiaspectator.com/resizer/v2/A52ETUHDAFFLDIMIICJPXR277M.jpg?auth=fad37700af26fd7874b6bd849d7fa39c5616f1a44448fa2861379fd9e3e4bf1e",
-    title: "Columbia’s student athletes stayed busy over the summer with tournaments and professional play. Here’s how the Lions fared in the offseason.",
+    title: "Columbia’s student athletes stayed busy over the summer with tournaments.",
     authors: ["Arielle Rieder"],
   },
   {
