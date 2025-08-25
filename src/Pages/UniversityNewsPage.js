@@ -27,6 +27,10 @@ const CreditsWrapper = styled.div`
   @media (max-width: 768px) {
     margin-top: 10rem;
   }
+  
+@media (max-width: 768px) {
+  background-color: #0D9DD4;          
+}
 `;
 
 
@@ -39,10 +43,8 @@ const UniversityNewsPage = () => {
             <PageWrapper>
                 <NavBar></NavBar>
                 <ArticlePage articles={universityArticles} />
-            </PageWrapper>
             <CreditsWrapper>
               <CreditsComponent />
-            </CreditsWrapper>  
         </div>
           
         );
