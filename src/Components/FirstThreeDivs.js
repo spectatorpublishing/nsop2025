@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import BlueBarMobile from "./BlueBarMobile";
 
+const CrownIcon = styled.img`
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 5%;
+  height: auto;
+  z-index: 1000;
+  cursor: pointer;
+`;
 const Page = styled.main`
   min-height: 100vh;
   background-color: #0D9DD4;
@@ -27,74 +37,6 @@ const Container = styled.div`
   }
 `;
 
-const LogoEllipse = styled.div`
-  position: absolute;
-  top: -25%;
-  right: -8.5%;
-  width: clamp(120px, 18vw, 180px);
-  height: clamp(120px, 18vw, 180px);
-  background: url("/ellipse.svg") no-repeat center/contain;
-  z-index: 3;
-  pointer-events: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width: 768px) {
-    width: 100px;
-    height: 100px;
-    top: -15%;
-    right: -6%;
-  }
-`;
-
-const EllipseCover = styled.img`
-  position: absolute;
-  inset: 0;
-  width: 97%;
-  height: auto;
-  object-fit: contain;
-  z-index: 4;
-  pointer-events: none;
-  transform: translate(5%, -2%);
-`;
-
-const CrownWrapper = styled.a`
-  position: relative;
-  width: 50%;
-  height: auto;
-  bottom: -6%;
-  left: -10%;
-  cursor: pointer;
-  text-decoration: none;
-  display: block;
-  z-index: 7;
-
-  @media (max-width: 768px) {
-    width: 40%;
-    bottom: -4%;
-    left: -6%;
-  }
-`;
-
-const WhiteCrown = styled.img`
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 100%;
-  height: auto;
-  z-index: 5;
-`;
-
-const BlackCrown = styled.img`
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 95%;
-  height: auto;
-  z-index: 6;
-`;
-
 const NSOPimage = styled.img`
   box-sizing: border-box;
   grid-column: 1 / 2;
@@ -104,7 +46,6 @@ const NSOPimage = styled.img`
   border: 5.729px solid #000;
   display: block;
   max-width: 100%;
-
   @media (max-width: 768px) {
     grid-column: 1 / -1;
     grid-row: 2;
@@ -188,8 +129,8 @@ const LetterCard = styled.div`
 
 const Signatures = styled.div`
   display: flex;
-  width: 359.541px;
-  height: 100.788px;
+  width: 100%;
+  height: auto;
   transform: rotate(0.142deg);
   align-items: center;
   gap: 60.726px;
@@ -233,22 +174,33 @@ const SigTitle = styled.div`
   }
 `;
 
-const firstThreeDivs = () => {
+
+
+const FirstThreeDivs = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
   return (
     <Page>
+      {isMobile ? (
+        <BlueBarMobile />
+      ) : (
+        <a href="https://columbiaspectator.com" target="_blank" rel="noopener noreferrer">
+          <CrownIcon src="whiteCrown.png" alt="Crown icon" />
+        </a>
+      )}
       <Container>
         <BlueBox>
-          <LogoEllipse>
-            <EllipseCover src="/ellipseCover.svg" alt="ellipse cover" />
-            <CrownWrapper
-              href="https://www.columbiaspectator.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhiteCrown src="/whiteCrown.png" alt="white crown logo" />
-              <BlackCrown src="/blackCrown.png" alt="black crown logo" />
-            </CrownWrapper>
-          </LogoEllipse>
           <NYCbg src="NYCbg.png" alt="NYC skyline" />
           <WelcomeText src="welcomeToColumbia.png" alt="Welcome to Columbia" />
         </BlueBox>
@@ -256,16 +208,17 @@ const firstThreeDivs = () => {
         <NSOPimage src="nsop.png" alt="NSOP sketch" />
 
         <LetterCard>
-          <h1>Dear class of 2029 [Not actual text],</h1>
+        <h1>Dear class of 2029,</h1>
           <div>
-            Welcome to Columbia! As you immerse yourself in the University
-            community and settle into your new home, you will encounter a campus
-            facing a pivotal moment in its history as you, too, undergo
-            significant change. You probably have lots of lingering questions
-            about what the years ahead will look like and how to navigate all of
-            Columbia’s different facets. Inside this special issue, you will
-            find everything we at Spectator think first-year students should
-            know as you acquaint yourself with campus life.
+            Welcome to Columbia! As you settle into the neighborhood and get to
+            know your classmates, we are honored to welcome you to campus. You
+            are joining our community at a turbulent time in Columbia’s history,
+            with uncertainty clouding the future of the coming months and years
+            here in Morningside Heights. At Spectator, we take seriously our duty
+            to shine light on the stories that matter and make sense of this
+            unprecedented moment for our community. We hope your journey as a
+            Lion is off to a roaring start and that this special edition helps
+            acquaint you with your new home.
           </div>
           <br />
           <div>ABOUT SPECTATOR</div>
@@ -273,14 +226,14 @@ const firstThreeDivs = () => {
             Spectator is a financially independent nonprofit organization and
             the largest student-run news media group on campus, serving tens of
             thousands of readers across Columbia, Morningside Heights, and West
-            Harlem. We have a 148-year tradition of documenting history as it
+            Harlem. We have a 149-year tradition of documenting history as it
             unfolds through in-depth, well-reported stories that hold
             institutional power to account.
           </div>
           <br />
           <div>
             Central to our mission is helping our audience make the most of
-            their experience at Columbia and its surrounding communities through
+            their experience of Columbia and its surrounding communities through
             our award-winning journalism. With Spectator’s publications and
             products, we aim to identify and directly address the needs of
             students, faculty, staff, and residents. Across all of our
@@ -290,35 +243,57 @@ const firstThreeDivs = () => {
             college experience within and beyond the campus gates.
           </div>
           <br />
-          <div>JOINING SPECTATOR AND WORK STUDY</div>
+          <div>JOINING SPECTATOR AND WORK-STUDY</div>
           <div>
             Joining Spec is one of the best ways to kick off your four years at
-            Columbia. When you become a member of the Spec family, nestled in
-            our office in Riverside Church, you step into a community of sharp
-            and passionate students who care deeply about the work they do.
-            You’ll build lifelong connections and friendships and learn skills
-            that will define your Columbia experience.
+            Columbia. When you become a member of the Spec family, you step into
+            a community of sharp and passionate students who constantly push
+            themselves, the people around them, and the community they serve to
+            be better. Along the way, you’ll build lifelong connections and
+            friendships.
           </div>
           <br />
           <div>
-            Working at Spec is an unmatched opportunity to be part of a fully
-            independent organization and make a tangible difference in a
-            community of which you are now a member. We shape curious and eager
-            staff members across journalism, business, and tech into the best
-            versions of themselves as they grow as leaders, thinkers, and people
-            ready to enter any career path they choose to pursue.
+            Working at Spec is an unmatched opportunity to be part of an
+            independent organization that has a direct impact on your new
+            community. Through the work they do for Spectator’s journalism,
+            business, and tech teams, our staff members grow as leaders,
+            thinkers, and people, gaining skills that apply to any career path
+            they choose to pursue.
+          </div>
+          <br />
+          <div>
+            As such, we are committed to ensuring that anyone who wants to join
+            Spec can, no matter your experience or background. That is why we
+            are proud to offer one of the best work-study jobs on campus. If you
+            qualify for work-study opportunities, even as a trainee, you can
+            apply to our work-study program right away. You do not need any
+            prior experience to join any of Spec’s departments, so be sure to
+            come to an open house and check out {' '}
+            <a href="https://www.specpublishing.com/join" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 'bold', color: '#2C2C2C', textDecoration: 'underline' }}>
+              joinspec.com
+            </a>{' '} to learn more about
+            the various ways you can get involved. If you have any questions,
+            don't hesitate to reach out to us directly at{' '}
+            <a href="mailto:editor@columbiaspectator.com" style={{ fontWeight: 'bold', color: '#2C2C2C', textDecoration: 'underline' }}>
+               editor@columbiaspectator.com
+            </a>.
           </div>
           <br />
           <br />
           <Signatures>
             <Signature>
-              <SigName>First Last</SigName>
+              <SigName>Shea Vance</SigName>
               <SigTitle>Editor in Chief</SigTitle>
             </Signature>
 
             <Signature>
-              <SigName>First Last</SigName>
+              <SigName>Heather Chen</SigName>
               <SigTitle>Managing Editor</SigTitle>
+            </Signature>
+            <Signature>
+              <SigName>Albert Tsai</SigName>
+              <SigTitle>Publisher</SigTitle>
             </Signature>
           </Signatures>
         </LetterCard>
@@ -327,4 +302,4 @@ const firstThreeDivs = () => {
   );
 };
 
-export default firstThreeDivs;
+export default FirstThreeDivs;
