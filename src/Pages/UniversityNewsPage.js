@@ -43,8 +43,10 @@ const UniversityNewsPage = () => {
             <PageWrapper>
                 <NavBar></NavBar>
                 <ArticlePage articles={universityArticles} />
+            </PageWrapper>
             <CreditsWrapper>
               <CreditsComponent />
+            </CreditsWrapper>
         </div>
           
         );
