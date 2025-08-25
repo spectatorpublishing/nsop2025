@@ -5,7 +5,7 @@ import NavBar from '../Components/NavBar'
 import SectionTitle from '../Components/SectionTitle'
 import ArticlePage from './ArticlePage';
 
-import videoArticles from "../data/videoArticles";
+import cityArticles from "../data/cityArticles";
 import CreditsComponent from '../Components/CreditsComponent';
 
 
@@ -34,21 +34,21 @@ const CreditsWrapper = styled.div`
 }
 `;
 
-const VideoPage = () => {
+const CityPage = () => {
     return (
         <div>
             <IntroPage></IntroPage>
-            <SectionTitle title="VIDEO" />
+            <SectionTitle title="City" />
             <PageWrapper>
                 <NavBar></NavBar>
-                <ArticlePage articles={videoArticles} />
-            </PageWrapper> 
+                <ArticlePage articles={cityArticles} />
+            </PageWrapper>  
             <CreditsWrapper>
               <CreditsComponent />
-            </CreditsWrapper> 
+            </CreditsWrapper>
         </div>
           
         );
     };
 
-export default VideoPage;
+export default CityPage;

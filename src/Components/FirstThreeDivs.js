@@ -160,12 +160,12 @@ const firstThreeDivs = () => {
             <br></br>
             <Signatures>
               <Signature>
-                <SigName>First Last</SigName>
+                <SigName>Shea Vance</SigName>
                 <SigTitle>Editor in Chief</SigTitle>
               </Signature>
 
               <Signature>
-                <SigName>First Last</SigName>
+                <SigName>Heather Chen</SigName>
                 <SigTitle>Managing Editor</SigTitle>
               </Signature>
             </Signatures>
