@@ -14,7 +14,8 @@ const PageWrapper = styled.div`
   margin-top: 2.5rem;
 
 @media (max-width: 768px) {
-  background-color: #0D9DD4;          
+  background-color: #0D9DD4;     
+  margin-top: -6.5rem; /* Increased margin to push NavBar down */     
 }
 `;
 

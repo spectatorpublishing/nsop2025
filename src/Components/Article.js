@@ -115,7 +115,6 @@ const AuthorText = styled.h1`
 
 /* ---------- Helper Functions ---------- */
 function isYouTubeUrl(url) {
-  console.log("Checking if URL is YouTube:", url);
   return url.includes("youtube.com") || url.includes("youtube");
 }
 

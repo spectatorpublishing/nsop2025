@@ -18,6 +18,7 @@ const Container = styled.div`
     margin-left: 3vw;
     height: 6rem;
     bottom: -25rem;
+    margin-top: 3rem;
   }
 `;
 
